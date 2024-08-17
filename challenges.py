@@ -12,6 +12,7 @@ def add_chocolate(shopping_list: list):
     shopping_list.append("chocolate")
     return shopping_list
 
+###############################################################################################
 
 def lou_bega(lyrics_list: list):
     """This function accepts a list of strings and adds the words 
@@ -38,9 +39,23 @@ def lou_bega(lyrics_list: list):
             "A little bit of Rita's all I need"
         ]
     """
-    lyrics_list.insert("A little bit of")
-    print(lyrics_list)
+    lyric = "A little bit of "
+    new_lyrics_list = []
+    for lyrics in lyrics_list:
+        # print(lyrics)
+        # print(lyrics_list)
+        # print(lyric)
+        new_lyrics = (lyric + lyrics)
+        # print(new_lyrics)
+        new_lyrics_list.append(new_lyrics)
+        # print(new_lyrics_list)
+    
+    return new_lyrics_list
+    
+result = lou_bega( ["Monica in my life", "Erica by my side", "Rita's all I need"])
+print(result)
 
+###############################################################################################
 
 def assemble_guest_list():
     """This function repeatedly prompts the user for the name of a dinner guest.
@@ -61,6 +76,7 @@ def assemble_guest_list():
         guest_list.append(guest_name)
     return guest_list
 
+###############################################################################################
     
 def is_prime(some_number: int): # A bit trickier!
     """This function tests to see if the input is a prime number.
@@ -79,8 +95,15 @@ def is_prime(some_number: int): # A bit trickier!
         return False
     if some_number == 2:
         return True
+    for x in range(2, some_number): # list[2, 3, 4]
+        if some_number%x == 0:
+            print(x)
+            return False
+    return True
 
-    pass 
+prime=is_prime(21)
+print(prime)
+    
     
     # Hint: 
     #   int(1.5) == 1.0
